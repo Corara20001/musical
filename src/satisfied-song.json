@@ -1,0 +1,16 @@
+{
+  "id": "satisfied-flac-draft-v1",
+  "title": "Satisfied",
+  "duration": 34.75,
+  "sourceOffset": 64.6,
+  "sourceEnd": 99.35,
+  "firstVocalSourceTime": 67.6,
+  "lastVocalSourceTime": 98.92,
+  "quality": "draft",
+  "audio": {
+    "vocal": "/audio/satisfied/vocals-excerpt.mp3",
+    "instrumental": "/audio/satisfied/instrumental-excerpt.mp3"
+  },
+  "noteCount": 68,
+  "sourceSha256": "53bca7ce0ae94ac837b63e23a6974e402a7ffad837b15501ed50036170e0660c"
+}

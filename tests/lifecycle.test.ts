@@ -1,0 +1,4 @@
+import { it, expect } from 'vitest';
+import { TransitionGuard } from '../src/lifecycle';
+it('pending transition cannot commit after back, but new transition can', async () => { const guard = new TransitionGuard(); let resolve!: () => void, commits = 0; const pending = guard.run(() => new Promise<void>(r => resolve = r), () => commits++); guard.cancel(); resolve(); expect(await pending).toBe(false); expect(commits).toBe(0); expect(await guard.run(async () => { }, () => commits++)).toBe(true); expect(commits).toBe(1); });
+it('hidden page keeps a resumed transition from committing', async () => { let visible = true; const guard = new TransitionGuard(() => visible); let resolve!: () => void, commits = 0; const pending = guard.run(() => new Promise<void>(r => resolve = r), () => commits++); visible = false; resolve(); expect(await pending).toBe(false); expect(commits).toBe(0); });
