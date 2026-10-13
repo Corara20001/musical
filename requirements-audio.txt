@@ -1,0 +1,9 @@
+# Local offline analysis only; not browser/game runtime dependencies.
+soundfile==0.14.0
+scipy==1.18.1
+librosa==1.0.0
+faster-whisper==1.2.1
+demucs==4.1.0
+torch==2.8.0
+torchaudio==2.8.0
+lameenc==1.8.4

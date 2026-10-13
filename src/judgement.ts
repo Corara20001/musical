@@ -42,7 +42,7 @@ export class JudgementEngine {
                 continue;
             const n = s.note;
             if (s.status === 'pending') {
-                const c = contacts.find(c => !this.usedPresses.has(`${c.id}:${c.pressedAt}`) && Math.abs(c.pressedAt - n.startTime) <= config.goodWindow && time - c.pressedAt < .1 && Math.abs(c.pitch - n.pitch) <= config.pitchTolerance);
+                const c = contacts.find(c => !this.usedPresses.has(`${c.id}:${c.pressedAt}`) && Math.abs(c.pressedAt - n.startTime) <= config.goodWindow && time - c.pressedAt < .1 && Math.abs(c.pitch - n.pitch) <= config.pitchTolerance && (interactionFor(n) !== 'tap' || c.pressedAt < n.startTime + n.duration));
                 if (c) {
                     this.usedPresses.add(`${c.id}:${c.pressedAt}`);
                     s.owner = c.id;
